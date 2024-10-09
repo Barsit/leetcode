@@ -1,3 +1,7 @@
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Vector;
+
 /**
  * @description:
  * @projectName:leetcode
@@ -17,7 +21,8 @@ public class LeetCode69 {
         while (left <= right){
             int mid = left + (right - left) / 2;
             long reslut =  (long) mid * mid;
-            if( reslut== x || (mid * mid < x && (long)((mid + 1) * (mid + 1)) > x)){
+            long reslut1 =(long)(mid + 1) * (mid + 1);
+            if( reslut== x || (reslut < x && reslut1 > x)){
                 return mid;
             }
             else if(reslut < x){
@@ -32,7 +37,9 @@ public class LeetCode69 {
     }
     public static void main(String[] args) {
         LeetCode69 solution = new LeetCode69();
-        int res = solution.mySqrt(2147395599);
+        int res = solution.mySqrt(2147483647);
         System.out.println(res);
+        List<Integer> objects = new ArrayList<>(10);
+        new Vector<>(10);
     }
 }
